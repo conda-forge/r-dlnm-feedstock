@@ -1,4 +1,4 @@
-{% set version = '2.4.7' %}
+{% set version = "2.4.10" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/dlnm_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/dlnm/dlnm_{{ version }}.tar.gz
-  sha256: e426dabc1d82355cb1249a9b5c9172cedbddb4ab64059bb96976976491e07c55
+  sha256: 3b75be8ce30b41c90a7b01f373d7a4ca9c5ddddb1739c5e6763c66ac2dfb0bf2
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -27,12 +27,12 @@ requirements:
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
-    - r-base
+    - r-base >=4.4.0
     - r-mgcv
     - r-nlme
     - r-tsmodel
   run:
-    - r-base
+    - r-base >=4.4.0
     - r-mgcv
     - r-nlme
     - r-tsmodel
