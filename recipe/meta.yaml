@@ -27,12 +27,12 @@ requirements:
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
-    - r-base
+    - r-base >=4.4.0
     - r-mgcv
     - r-nlme
     - r-tsmodel
   run:
-    - r-base
+    - r-base >=4.4.0
     - r-mgcv
     - r-nlme
     - r-tsmodel
